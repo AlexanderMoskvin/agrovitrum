@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap&subset=cyrillic-ext');
+
+.form-main {
+    display: flex;
+    width: 62%;
+    margin: 0 auto;
+}
+
+@media (max-width: 1465px) {
+    .form-main {
+        width: 80%;
+    }
+}
+
+@media (max-width: 1165px) {
+    .form-main {
+        width: 90%;
+    }
+}
+
+@media (max-width: 766px) {
+    .form-main {
+        display: block;
+    }
+}
+
+.hidden-form-main {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.input-block {
+  width: 32%;
+}
+
+.textarea-block {
+    width: 38%;
+}
+
+.tel-block {
+    width: 26%;
+    margin: 7px 0 0 26px;
+}
+
+@media (max-width: 766px) {
+    .input-block,
+    .textarea-block,
+    .tel-block {
+        display: block;
+        width: 98%;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .tel-block {
+        display: none;
+    }
+}
+
+.tel-block button {
+    width: 100%!important;
+}
+
+.tel-block span {
+    font-size: 18px;
+}
+
+.tel-block a {
+    color: white;
+}
+
+.policy-form,
+#errorBlock_main,
+#errorBlockContact {
+    display: block;
+    width: 62%;
+    margin: 0 auto;
+}
+
+@media (max-width: 1465px) {
+    .policy-form,
+    #errorBlock_main,
+    #errorBlockContact {
+        width: 80%;
+    }
+}
+
+@media (max-width: 1165px) {
+    .policy-form,
+    #errorBlock_main,
+    #errorBlockContact {
+        width: 90%;
+    }
+}
+
+@media (max-width: 766px) {
+    .policy-form,
+    #errorBlock_main,
+    #errorBlockContact {
+        width: 89%;
+        padding: 0 20px;
+        margin: 0 auto;
+    }
+}
+
+.tel-form-mobile {
+    display: none;
+}
+
+@media (max-width: 766px) {
+    .tel-form-mobile {
+        display: block;
+    }
+}
+
+.form-control {
+    width: 100%;
+    margin: 0;
+}
+
+.form-control input,
+.form-control textarea {
+    background: #fcfcfc;
+    border: 1px solid white;
+    padding: 15px 20px;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #333;
+}
+
+.form-control input {
+  width: 100%;
+}
+
+.form-control textarea {
+    width: 97%;
+    height: 189px;
+    resize: none;
+    margin-left: 15px;
+}
+
+@media (max-width: 766px) {
+    .form-control textarea {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+.form-control .btn {
+    margin-left: 0;
+    border: 2px solid white;
+    border-radius: 0;
+    background: #8fb520;
+}
+
+.btn {
+    width: 45%;
+    height: 40px;
+    background: #ff5644;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-left: 10px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 600ms ease;
+}
+
+.btn:hover {
+    transition: all 600ms ease;
+    background: white;
+}
+
+.logOut {
+    width: 17%;
+    margin-left: 0;
+}
+
+.delete {
+    width: 30%;
+    margin-left: 0;
+}
+
+.link {
+    margin-top: 30px;
+    background: #bfc0c7;
+    border-radius: 5px;
+    padding: 15px 20px;
+}

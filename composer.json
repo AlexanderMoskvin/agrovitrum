@@ -1,0 +1,21 @@
+{
+    "name": "vendor/app",
+    "description": "This is a graduate work",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Vendor\\App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Alexander Moskvin",
+            "email": "alex979793@mail.ru"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "phpmailer/phpmailer": "dev-master",
+        "erusev/parsedown": "dev-master"
+    }
+}
