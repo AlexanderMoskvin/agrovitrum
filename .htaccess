@@ -1,7 +1,7 @@
 ServerSignature Off
 AddDefaultCharset UTF-8
 
-#Options -MultiViews
+Options -MultiViews
 RewriteEngine On
 
 RewriteBase /

@@ -5,8 +5,8 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Страница про компанию</title>
-    <meta name="description" content="Страница про компанию">
+    <title>Кабинет пользователя</title>
+    <meta name="description" content="Кабинет пользователя">
 
     <link rel="stylesheet" href="/public/css/main.css?url=<?=mt_rand(0,100)?>" type="text/css" charset="utf-8">
     <link rel="stylesheet" href="/public/css/form.css?url=<?=mt_rand(0,100000)?>" type="text/css" charset="utf-8">
@@ -15,12 +15,15 @@
 <body>
     <?php require 'public/blocks/header.php' ?>
 
-    <div class="main">
-        <h1 class="text-center">Про компанию</h1>
-        <p class="text-center">Здесь просто текст про компанию</p>
-        <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium alias, asperiores error est ex in
-            molestiae nesciunt quasi reiciendis. Aliquid dolorum mollitia nesciunt quisquam!
-            Deleniti eius fugiat harum sapiente voluptate.</p>
+    <div class="container">
+        <h1 class="mt-5 fw-bold">Кабинет пользователя</h1>
+        <div class="mt-5">
+            <p>Привет, <b><?=$data['name']?></b></p>
+            <form action="/user/dashboard" method="post">
+                <input type="hidden" name="exit_btn">
+                <button type="submit" class="btn logOut">Выйти</button>
+            </form>
+        </div>
     </div>
 
     <?php require 'public/blocks/footer.php' ?>

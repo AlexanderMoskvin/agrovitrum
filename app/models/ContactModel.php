@@ -6,26 +6,26 @@ require 'vendor/autoload.php';
 
     class ContactModel {
         private $name;
-        private $tel;
         private $email;
+        private $age;
         private $message;
 
-        public function setData($name, $tel, $email, $message) {
+        public function setData($name, $email, $age, $message) {
             $this->name = $name;
-            $this->tel = $tel;
             $this->email = $email;
+            $this->age = $age;
             $this->message = $message;
         }
 
         public function validForm() {
-            if(strlen($this->name) < 1)
-                return "Введите имя";
-            else if(strlen($this->tel) < 1)
-                return "Введите телефон";
-            else if(!is_numeric($this->tel))
-                return "Вы ввели не телефон";
-            else if(strlen($this->message) > 100)
-                return "Сообщение не более 100 символов";
+            if(strlen($this->name) < 3)
+                return "Имя слишком короткое";
+            else if(strlen($this->email) < 3)
+                return "Email слишком короткий";
+            else if(!is_numeric($this->age) || $this->age <= 0 || $this->age > 90)
+                return "Вы ввели не возраст";
+            else if(strlen($this->message) < 3)
+                return "Сообщение слишком короткое";
             else
                 return "Верно";
         }
@@ -37,16 +37,14 @@ require 'vendor/autoload.php';
             try {
                 $mail->SMTPDebug = 0;
                 $mail->isSMTP();
-                $mail->Host       = 'smtp.send-box.ru';
+                $mail->Host       = 'smtp-relay.sendinblue.com';
                 $mail->SMTPAuth   = true;
-                $mail->Username   = 'sendbox@agrovitrum.bizml.ru';
-                $mail->Password   = 'bqqJ5tcZA6qrpN';
+                $mail->Username   = 'alexander979793@gmail.com';
+                $mail->Password   = 'ZxH98snXR42Gfmk0';
                 $mail->SMTPSecure = 'tls';
                 $mail->Port       = 587;
 
-                $mail->setFrom('info@agrovitrum.ru', 'Agrovitrum');
-
-                $mail->addAddress('info@agrovitrum.ru', 'Agrovitrum');
+                $mail->setFrom('alexander979793@gmail.com', 'Alexander Moskvin');
 
                 $mail->addAddress('alex979793@mail.ru', 'Alexander Moskvin');
 
@@ -56,11 +54,10 @@ require 'vendor/autoload.php';
                 $parsedown = new Parsedown();
 
                 $text = '#Приветсвенное письмо
-                $this->name';
+            Привет, это *письмо* было создано через _Parsedown_!';
                 $message = $parsedown->text($text);
 
-                $mail->Body = '<span>Имя: </span>' . $this->name . '<br><br><span>Телефон: </span>' . $this->tel .
-                    '<br><br><span>Почта: </span>' . $this->email . '<br><br><span>Сообщение: </span>' . $this->message;
+                $mail->Body    = $message;
 
                 $mail->AltBody = strip_tags($message);
 

@@ -5,7 +5,7 @@
             $data = [];
             if(isset($_POST['name'])) {
                 $mail = $this->model('ContactModel');
-                $mail->setData($_POST['name'], $_POST['tel'], $_POST['email'], $_POST['message']);
+                $mail->setData($_POST['name'], $_POST['email'], $_POST['age'], $_POST['message']);
 
                 $isValid = $mail->validForm();
                 if($isValid == "Верно")
